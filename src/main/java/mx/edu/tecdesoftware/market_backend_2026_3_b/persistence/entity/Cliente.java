@@ -1,6 +1,9 @@
 package mx.edu.tecdesoftware.market_backend_2026_3_b.persistence.entity;
 
 import jakarta.persistence.*;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import java.util.List;
 
 
 @Entity
@@ -22,6 +25,9 @@ public class Cliente {
 
     @Column (name = "correo_electronico")
     private String correoElectronico;
+
+    @OneToMany(mappedBy = "cliente")
+    private List<Compra> compras;
 
     public Integer getId() {
         return id;

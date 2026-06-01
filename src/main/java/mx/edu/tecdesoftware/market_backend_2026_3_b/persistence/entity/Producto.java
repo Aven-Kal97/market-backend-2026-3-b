@@ -20,6 +20,15 @@ public class Producto {
     private Integer cantidadStock;
     private Boolean estado;
 
+    //Relacion con categoria, asi se escribe la cardinalidad
+    @ManyToOne
+    @JoinColumn(name = "id_categoria",
+    //No quiero que se mueva nada en la tabla
+    insertable = false, updatable = false)
+    private Categoria categoria;
+
+
+
     public Integer getInProducto() {
         return inProducto;
     }
