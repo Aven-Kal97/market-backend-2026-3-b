@@ -8,9 +8,10 @@ public class Producto {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer inProducto;
+    @Column(name = "id_producto")
+    private Integer idProducto;
     private String nombre;
-     @Column(name = "id_categoria")
+    @Column(name = "id_categoria")
     private String idCategoria;
     @Column(name = "codigo_barras")
     private String codigoBarras;
@@ -29,12 +30,12 @@ public class Producto {
 
 
 
-    public Integer getInProducto() {
-        return inProducto;
+    public Integer getIdProducto() {
+        return idProducto;
     }
 
-    public void setInProducto(Integer inProducto) {
-        this.inProducto = inProducto;
+    public void setIdProducto(Integer inProducto) {
+        this.idProducto = inProducto;
     }
 
     public String getNombre() {
@@ -83,5 +84,13 @@ public class Producto {
 
     public void setEstado(Boolean estado) {
         this.estado = estado;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
     }
 }

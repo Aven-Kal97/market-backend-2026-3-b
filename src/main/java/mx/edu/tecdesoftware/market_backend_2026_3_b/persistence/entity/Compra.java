@@ -80,4 +80,20 @@ public class Compra {
     public void setEstado(String estado) {
         this.estado = estado;
     }
+
+    public Cliente getClinte() {
+        return clinte;
+    }
+
+    public void setClinte(Cliente clinte) {
+        this.clinte = clinte;
+    }
+
+    public List<CompraProducto> getCompraProducto() {
+        return compraProducto;
+    }
+
+    public void setCompraProducto(List<CompraProducto> compraProducto) {
+        this.compraProducto = compraProducto;
+    }
 }
