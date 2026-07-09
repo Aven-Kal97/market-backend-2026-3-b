@@ -5,8 +5,6 @@ import jakarta.persistence.*;
 @Entity
 @Table(name = "compras_productos")
 public class CompraProducto {
-    @Id
-
     @EmbeddedId
     private CompraProductoPK id;
 
@@ -18,6 +16,7 @@ public class CompraProducto {
 
     //Unir la tabla de compras
     @ManyToOne
+    @MapsId("idCompra")
     @JoinColumn(name = "id_compra", insertable = false, updatable = false)
     private Compra compra;
 
