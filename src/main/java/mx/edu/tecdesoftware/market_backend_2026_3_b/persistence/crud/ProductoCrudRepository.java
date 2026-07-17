@@ -15,7 +15,7 @@ public interface ProductoCrudRepository extends CrudRepository<Producto , Intege
     //Formato SQL
     // SELECT * FROM Categorias WHERE id_categoria = ? ORDER BY Nombre ADC
 
-    List<Producto> findByCantidadOrderByNombreAsc (int idCategoria);
+    List<Producto> findByIdCategoriaOrderByNombreAsc (int idCategoria);
 
     Optional<List<Producto>> findByCantidadStockLessThanAndEstado (int cantidad, boolean estado);
 

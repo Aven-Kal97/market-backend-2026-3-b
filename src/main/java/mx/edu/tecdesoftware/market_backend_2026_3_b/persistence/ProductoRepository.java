@@ -32,7 +32,7 @@ public class ProductoRepository implements ProductRepository {
 
     public Optional<List<Product>> getByCategory(int categoryId){
         List<Producto> productos
-                = productoCrudRepository.findByCantidadOrderByNombreAsc(categoryId);
+                = productoCrudRepository.findByIdCategoriaOrderByNombreAsc(categoryId);
         return Optional.of(productMapper.toProducts(productos));
     }
 

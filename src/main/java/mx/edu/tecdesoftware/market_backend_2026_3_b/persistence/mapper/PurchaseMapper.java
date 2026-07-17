@@ -13,7 +13,7 @@ import java.util.List;
 public interface PurchaseMapper {
 
     @Mappings({
-            @Mapping(source = "idComra", target = "purchaseId"),
+            @Mapping(source = "idCompra", target = "purchaseId"),
             @Mapping(source = "idCliente", target = "clientId"),
             @Mapping(source = "fecha", target = "date"),
             @Mapping(source = "medioPago", target = "paymentMethod"),
@@ -25,6 +25,7 @@ public interface PurchaseMapper {
     List<Purchase> toPurchases(List<Compra> compras);
 
     @InheritInverseConfiguration
-    @Mapping(target = "clinte", ignore = true)
+    @Mapping(target = "idCompra", ignore = true)
+    @Mapping(target = "cliente", ignore = true)
     Compra toCompra(Purchase purchase);
 }
