@@ -67,3 +67,4 @@ Desktop.ini
 .swp
 *.bak
 *.tmp
+/src/main/resources/application-dev.properties
