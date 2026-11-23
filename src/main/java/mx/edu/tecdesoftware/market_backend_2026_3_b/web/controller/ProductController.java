@@ -19,6 +19,7 @@ import java.util.List;
 @RestController
 @RequestMapping ("/products")
 @Tag(name = "Product", description = "Manage products in the store")
+@CrossOrigin(origins = "*")
 public class ProductController {
 
     @Autowired
