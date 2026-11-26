@@ -11,6 +11,8 @@ public class Producto {
     @Column(name = "id_producto")
     private Integer idProducto;
     private String nombre;
+    @Column(name = "image_url", columnDefinition = "TEXT")
+    private String imageUrl;
     @Column(name = "id_categoria")
     private Integer idCategoria;
     @Column(name = "codigo_barras")
@@ -92,5 +94,13 @@ public class Producto {
 
     public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 }
