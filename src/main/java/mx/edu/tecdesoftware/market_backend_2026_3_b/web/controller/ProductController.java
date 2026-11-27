@@ -103,6 +103,15 @@ public class ProductController {
         return ResponseEntity.status(HttpStatus.CREATED).body(productService.save(product));
     }
 
+    @PutMapping("/{id}")
+    public ResponseEntity<Product> update(
+            @PathVariable("id") int productId,
+            @RequestBody Product product) {
+        return productService.update(productId, product)
+                .map(ResponseEntity::ok)
+                .orElseGet(() -> ResponseEntity.notFound().build());
+    }
+
     @DeleteMapping("/{id}")
     @Operation(summary = "Delete a product by ID", description = "Deletes a product if it exists")
     @ApiResponse(responseCode = "200", description = "Product deleted successfully")

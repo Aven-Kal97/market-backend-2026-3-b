@@ -55,6 +55,21 @@ public class ProductoRepository implements ProductRepository {
         return productMapper.toProduct(productoCrudRepository.save(producto));
     }
     // Eliminar un producto por ID
+    public Optional<Product> update(int productId, Product product) {
+        return productoCrudRepository.findById(productId)
+                .map(existing -> {
+                    existing.setNombre(product.getName());
+                    existing.setIdCategoria(product.getCategoryId());
+                    existing.setPrecioVenta(product.getPrice());
+                    existing.setCantidadStock(product.getStock());
+                    existing.setEstado(product.getActive());
+                    existing.setImageUrl(product.getImageUrl());
+
+                    Producto saved = productoCrudRepository.save(existing);
+                    return productMapper.toProduct(saved);
+                });
+    }
+
     public void delete(int productId){
         productoCrudRepository.deleteById(productId);
     }
